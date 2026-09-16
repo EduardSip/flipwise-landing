@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIPWISE — Resale Profit System | Know Your Profit Before You Buy</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#090D16',
+                            800: '#0F172A',
+                            700: '#1E293B',
+                            600: '#334155'
+                        },
+                        brand: {
+                            50: '#ECFDF5',
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090D16;
+            color: #F8FAFC;
+        }
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-300">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-dark-900/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold group-hover:border-emerald-500 transition-colors">
+                        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg tracking-wider text-white">FLIPWISE</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold -mt-1">Resale System</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+                    <a href="#how-it-works" class="hover:text-emerald-400 transition-colors">How It Works</a>
+                    <a href="#pricing" class="hover:text-emerald-400 transition-colors">Pricing</a>
+                    <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#pricing" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-sm shadow-emerald-500/20 active:scale-95">
+                        GET FLIPWISE — €9.99
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+                    <svg id="menu-icon-open" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-dark-900 px-4 pt-3 pb-6 space-y-3">
+            <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Features</a>
+            <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">How It Works</a>
+            <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Pricing</a>
+            <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">FAQ</a>
+            <div class="pt-2">
+                <a href="#pricing" class="block w-full text-center px-5 py-3 rounded-lg text-sm font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300">
+                    GET FLIPWISE — €9.99
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Standalone Web Application • No Monthly Fees</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                    STOP GUESSING IF A FLIP IS WORTH IT.
+                </h1>
+
+                <p class="mt-6 text-lg sm:text-xl text-slate-400 font-normal leading-relaxed">
+                    <strong class="text-slate-200">FLIPWISE</strong> calculates your potential profit, ROI, margin, break-even price and maximum buy price before you spend your money.
+                </p>
+
+                <!-- Hero CTA Buttons -->
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center">
+                        GET FLIPWISE — €9.99
+                    </a>
+                    <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-300 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 transition-all text-center">
+                        SEE HOW IT WORKS
+                    </a>
+                </div>
+
+                <!-- Trust indicators -->
+                <div class="mt-6 flex items-center justify-center gap-6 text-xs text-slate-400 font-medium">
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        One-Time Purchase
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Local Data Storage
+                    </span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Instant Web Access
+                    </span>
+                </div>
+            </div>
+
+            <!-- LIVE HERO INTERACTIVE ANALYZER PREVIEW -->
+            <div class="mt-14 max-w-4xl mx-auto">
+                <div class="bg-dark-800 border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden">
+                    
+                    <!-- Mock Browser Header Bar -->
+                    <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
+                            <span class="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">flipwise.app / analyzer</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">LIVE INTERACTIVE DEMO</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive App Mock Body -->
+                    <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-900/60">
+                        
+                        <!-- Inputs Panel -->
+                        <div class="lg:col-span-6 space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                    Flip Analyzer Input
+                                </h3>
+                                <span class="text-xs text-slate-400 font-mono">Currency: EUR (€)</span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Item Title / Opportunity</label>
+                                    <input type="text" value="Sony WH-1000XM4 Headphones (Used)" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Buy Price (€)</label>
+                                        <input id="demo-buy" type="number" value="85" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Target Sale (€)</label>
+                                        <input id="demo-sale" type="number" value="175" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Platform Fee (%)</label>
+                                        <select id="demo-fee" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                                            <option value="12.8">eBay (12.8%)</option>
+                                            <option value="15">Amazon (15.0%)</option>
+                                            <option value="10">StockX / GOAT (10%)</option>
+                                            <option value="0">Vinted / Local (0%)</option>
+                                            <option value="20">Poshmark (20.0%)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Est. Shipping (€)</label>
+                                        <input id="demo-ship" type="number" value="7.50" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real-Time Metrics Output Panel -->
+                        <div class="lg:col-span-6 bg-dark-900/90 border border-slate-800 rounded-xl p-5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Calculated Metrics</span>
+                                    <span id="demo-badge" class="px-2.5 py-1 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        VERDICT: BUY
+                                    </span>
+                                </div>
+
+                                <div class="mt-4 grid grid-cols-2 gap-4">
+                                    <div class="p-3 bg-slate-800/40 rounded-lg border border-slate-800">
+                                        <span class="block text-xs text-slate-400 font-medium">Net Estimated Profit</span>
+                                        <span id="demo-profit" class="text-2xl font-extrabold text-emerald-400 mt-0.5 block">€60.10</span>
+                                    </div>
+                                    <div class="p-3 bg-slate-800/40 rounded-lg border border-slate-800">
+                                        <span class="block text-xs text-slate-400 font-medium">Estimated ROI</span>
+                                        <span id="demo-roi" class="text-2xl font-extrabold text-white mt-0.5 block">70.7%</span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 space-y-2 text-xs">
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Profit Margin:</span>
+                                        <span id="demo-margin" class="text-slate-200 font-semibold">34.3%</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Break-Even Selling Price:</span>
+                                        <span id="demo-breakeven" class="text-slate-200 font-semibold">€106.08</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Max Buy Price (at 30% Target ROI):</span>
+                                        <span id="demo-maxbuy" class="text-slate-200 font-semibold">€117.38</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                                <span>Calculated automatically by FLIPWISE engine</span>
+                                <span class="text-emerald-400 font-mono">0.02ms</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="py-20 bg-dark-900 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">The Reseller Trap</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    EVERY BAD FLIP STARTS WITH A GUESS.
+                </h2>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    Resellers often look at a purchase price and expected selling price without considering all hidden costs.
+                </p>
+            </div>
+
+            <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cost 1 -->
+                <div class="bg-dark-800 border border-slate-800 p-6 rounded-xl relative">
+                    <div class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center text-slate-300 mb-4 font-bold text-sm">01</div>
+                    <h3 class="text-lg font-bold text-white">Purchase Cost</h3>
+                    <p class="mt-2 text-sm text-slate-400">
+                        The raw initial price you pay for the item. But this is only the beginning of your cost basis.
+                    </p>
+                </div>
+
+                <!-- Cost 2 -->
+                <div class="bg-dark-800 border border-slate-800 p-6 rounded-xl relative">
+                    <div class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center text-slate-300 mb-4 font-bold text-sm">02</div>
+                    <h3 class="text-lg font-bold text-white">Platform Fees</h3>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Marketplace cuts, payment processing fees, and mandatory listing charges take a significant chunk.
+                    </p>
+                </div>
+
+                <!-- Cost 3 -->
+                <div class="bg-dark-800 border border-slate-800 p-6 rounded-xl relative">
+                    <div class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center text-slate-300 mb-4 font-bold text-sm">03</div>
+                    <h3 class="text-lg font-bold text-white">Shipping & Freight</h3>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Inbound freight to your door and outbound shipping supplies, labels, and insurance costs.
+                    </p>
+                </div>
+
+                <!-- Cost 4 -->
+                <div class="bg-dark-800 border border-slate-800 p-6 rounded-xl relative">
+                    <div class="w-10 h-10 rounded-lg bg-slate-700/50 flex items-center justify-center text-slate-300 mb-4 font-bold text-sm">04</div>
+                    <h3 class="text-lg font-bold text-white">Other Expenses</h3>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Cleaning, refurbishment, replacement parts, testing equipment, and transaction charges.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual comparison summary box -->
+            <div class="mt-12 bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-1 text-center md:text-left">
+                    <span class="text-xs text-emerald-400 uppercase font-bold tracking-wider">The Reality Check</span>
+                    <h4 class="text-lg font-bold text-white">A seemingly profitable item can become far less profitable after real costs are included.</h4>
+                </div>
+                <div class="shrink-0 bg-dark-800 px-5 py-3 rounded-lg border border-slate-700 text-center">
+                    <span class="text-xs text-slate-400 block">Typical Fee Drag</span>
+                    <span class="text-xl font-extrabold text-white">15% – 35%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="py-20 bg-dark-800/40 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">The FLIPWISE Framework</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    FLIPWISE DOES THE MATH BEFORE YOU BUY.
+                </h2>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    Three core operational modules designed to replace emotional buying with financial clarity.
+                </p>
+            </div>
+
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-dark-800 border border-slate-800 hover:border-slate-700 transition-colors rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">ANALYZE</h3>
+                        <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+                            Calculate expected profit, ROI, margin, break-even price and maximum buy price before purchasing.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-medium text-emerald-400">
+                        Instant Buy / Pass Guidance
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-dark-800 border border-slate-800 hover:border-slate-700 transition-colors rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">TRACK</h3>
+                        <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+                            Manage inventory seamlessly from purchase through active listing all the way to finalized sale.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-medium text-emerald-400">
+                        Full Inventory Lifecycle
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-dark-800 border border-slate-800 hover:border-slate-700 transition-colors rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-white">UNDERSTAND</h3>
+                        <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+                            See exactly which products, categories, and sales platforms generate the best net financial results.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800 text-xs font-medium text-emerald-400">
+                        Actionable Platform Analytics
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="py-20 bg-dark-900 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Core Capabilities</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    BUILT FOR DISCIPLINED RESELLERS
+                </h2>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    Every tool inside FLIPWISE is optimized for speed, precision, and financial transparency.
+                </p>
+            </div>
+
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Feature 1 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">1. FLIP ANALYZER</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Know whether a deal meets your target ROI and profit threshold before committing capital.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">2. SOURCING</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Compare potential opportunities quickly when evaluating multiple deals simultaneously.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">3. INVENTORY</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Track every item from purchase date and cost basis to active status and listing channel.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">4. SALES LEDGER</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Keep a clear, permanent record of completed sales, true net profit, and days to sell.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">5. DASHBOARD</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        See total revenue, net profit, inventory value, average ROI and key business metrics at a glance.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-dark-800/80 border border-slate-800 p-6 rounded-xl hover:border-slate-700 transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">6. ANALYTICS</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Understand net profitability broken down by selling platform, item category, and custom time period.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SCREENSHOTS & INTERFACE MOCKUPS SECTION -->
+    <section class="py-20 bg-dark-800/30 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Interface Preview</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    EXPLORE THE FLIPWISE INTERFACE
+                </h2>
+                <p class="mt-4 text-slate-400 text-base">
+                    Clean, high-density financial layout designed for fast workflow. <em>(Illustrative demo data shown)</em>
+                </p>
+
+                <!-- Screen Selector Tabs -->
+                <div class="mt-8 flex flex-wrap justify-center gap-2 p-1.5 bg-dark-900 rounded-xl border border-slate-800 inline-flex">
+                    <button id="tab-dashboard" onclick="switchTab('dashboard')" class="tab-btn active px-4 py-2 rounded-lg text-xs font-bold text-slate-900 bg-emerald-400 transition-all">
+                        Dashboard
+                    </button>
+                    <button id="tab-analyzer" onclick="switchTab('analyzer')" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all">
+                        Flip Analyzer
+                    </button>
+                    <button id="tab-inventory" onclick="switchTab('inventory')" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all">
+                        Inventory
+                    </button>
+                    <button id="tab-analytics" onclick="switchTab('analytics')" class="tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all">
+                        Analytics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mockup Frame -->
+            <div class="mt-10 max-w-5xl mx-auto bg-dark-900 border border-slate-700/70 rounded-2xl shadow-2xl overflow-hidden">
+                
+                <!-- Mockup App Header -->
+                <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                    <div class="flex items-center space-x-3">
+                        <span class="font-bold text-white tracking-wider flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> FLIPWISE v1.0
+                        </span>
+                        <span class="text-slate-600">|</span>
+                        <span id="screen-title" class="text-slate-300 font-medium">Dashboard View</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-[11px]">
+                        <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">DEMO DATA</span>
+                        <span class="hidden sm:inline text-slate-400">Local DB: Connected</span>
+                    </div>
+                </div>
+
+                <!-- SCREEN CONTENT 1: DASHBOARD -->
+                <div id="screen-view-dashboard" class="p-6 md:p-8 space-y-6">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-dark-800 border border-slate-800 p-4 rounded-xl">
+                            <span class="text-xs text-slate-400 block font-medium">Total Revenue</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-white mt-1 block">€4,850.00</span>
+                            <span class="text-[11px] text-emerald-400 font-medium mt-1 inline-block">28 Items Sold</span>
+                        </div>
+                        <div class="bg-dark-800 border border-slate-800 p-4 rounded-xl">
+                            <span class="text-xs text-slate-400 block font-medium">Net Realized Profit</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1 block">€1,640.50</span>
+                            <span class="text-[11px] text-slate-400 mt-1 inline-block">After fees & shipping</span>
+                        </div>
+                        <div class="bg-dark-800 border border-slate-800 p-4 rounded-xl">
+                            <span class="text-xs text-slate-400 block font-medium">Average ROI</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-white mt-1 block">51.2%</span>
+                            <span class="text-[11px] text-emerald-400 mt-1 inline-block">+4.2% vs target</span>
+                        </div>
+                        <div class="bg-dark-800 border border-slate-800 p-4 rounded-xl">
+                            <span class="text-xs text-slate-400 block font-medium">Active Inventory</span>
+                            <span class="text-xl sm:text-2xl font-extrabold text-white mt-1 block">€1,120.00</span>
+                            <span class="text-[11px] text-slate-400 mt-1 inline-block">14 active listings</span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Sales Table Mock -->
+                    <div class="bg-dark-800 border border-slate-800 rounded-xl overflow-x-auto">
+                        <div class="p-4 border-b border-slate-800 flex justify-between items-center">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Recent Completed Sales</h4>
+                            <span class="text-xs text-emerald-400 font-mono">Last updated today</span>
+                        </div>
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead class="bg-slate-900/80 text-slate-400 border-b border-slate-800 uppercase text-[10px]">
+                                <tr>
+                                    <th class="p-3">Item Name</th>
+                                    <th class="p-3">Platform</th>
+                                    <th class="p-3">Buy Price</th>
+                                    <th class="p-3">Sold Price</th>
+                                    <th class="p-3">Net Profit</th>
+                                    <th class="p-3">ROI</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">Vintage Leather Jacket</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Vinted</span></td>
+                                    <td class="p-3 font-mono">€25.00</td>
+                                    <td class="p-3 font-mono">€85.00</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">+€60.00</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">240.0%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">Mechanical Keyboard Custom</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">eBay</span></td>
+                                    <td class="p-3 font-mono">€70.00</td>
+                                    <td class="p-3 font-mono">€150.00</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">+€53.20</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">76.0%</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">Retro Gaming Console</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">StockX</span></td>
+                                    <td class="p-3 font-mono">€110.00</td>
+                                    <td class="p-3 font-mono">€190.00</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">+€51.00</td>
+                                    <td class="p-3 font-mono text-emerald-400 font-bold">46.3%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SCREEN CONTENT 2: ANALYZER -->
+                <div id="screen-view-analyzer" class="p-6 md:p-8 space-y-6 hidden">
+                    <div class="bg-dark-800 border border-slate-800 rounded-xl p-5">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Opportunity Evaluator</h4>
+                                <p class="text-xs text-slate-400">Pre-purchase margin & risk calculation engine</p>
+                            </div>
+                            <span class="px-3 py-1 rounded bg-emerald-500/20 text-emerald-400 font-bold text-xs">BUY VERDICT CONFIRMED</span>
+                        </div>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
+                                <span class="text-slate-400 block">Buy Price: €45.00</span>
+                                <span class="text-slate-400 block mt-1">Expected Sale: €110.00</span>
+                                <span class="text-slate-400 block mt-1">Platform Fee: 12.8% (€14.08)</span>
+                            </div>
+                            <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
+                                <span class="text-slate-400 block">Est. Shipping: €6.50</span>
+                                <span class="text-slate-400 block mt-1">Other Expense: €0.00</span>
+                                <span class="text-slate-400 block mt-1">Total Cost Basis: €51.50</span>
+                            </div>
+                            <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
+                                <span class="text-emerald-400 font-bold block text-sm">Net Profit: +€44.42</span>
+                                <span class="text-white font-semibold block mt-1">ROI: 86.2% | Margin: 40.3%</span>
+                                <span class="text-slate-400 block mt-1">Break-Even Sale: €59.06</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCREEN CONTENT 3: INVENTORY -->
+                <div id="screen-view-inventory" class="p-6 md:p-8 space-y-6 hidden">
+                    <div class="bg-dark-800 border border-slate-800 rounded-xl overflow-hidden text-xs">
+                        <div class="p-4 border-b border-slate-800 flex justify-between items-center">
+                            <h4 class="text-xs font-bold text-white uppercase">Active Inventory Ledger (14 Items)</h4>
+                            <span class="text-xs text-slate-400">Filter: All Platforms</span>
+                        </div>
+                        <table class="w-full text-left text-slate-300">
+                            <thead class="bg-slate-900/80 text-slate-400 border-b border-slate-800 uppercase text-[10px]">
+                                <tr>
+                                    <th class="p-3">SKU / Item</th>
+                                    <th class="p-3">Category</th>
+                                    <th class="p-3">Purchase Date</th>
+                                    <th class="p-3">Cost Basis</th>
+                                    <th class="p-3">List Price</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">#SKU-9020 DSLR Lens 50mm</td>
+                                    <td class="p-3">Electronics</td>
+                                    <td class="p-3 text-slate-400">2026-09-02</td>
+                                    <td class="p-3 font-mono">€120.00</td>
+                                    <td class="p-3 font-mono">€210.00</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">#SKU-9021 Designer Sunglasses</td>
+                                    <td class="p-3">Fashion</td>
+                                    <td class="p-3 text-slate-400">2026-09-08</td>
+                                    <td class="p-3 font-mono">€40.00</td>
+                                    <td class="p-3 font-mono">€95.00</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-white">#SKU-9022 Smartwatch Gen 4</td>
+                                    <td class="p-3">Electronics</td>
+                                    <td class="p-3 text-slate-400">2026-09-11</td>
+                                    <td class="p-3 font-mono">€65.00</td>
+                                    <td class="p-3 font-mono">€130.00</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">Draft</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SCREEN CONTENT 4: ANALYTICS -->
+                <div id="screen-view-analytics" class="p-6 md:p-8 space-y-6 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-dark-800 border border-slate-800 p-5 rounded-xl">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Profit by Channel</h4>
+                            <div class="space-y-3 text-xs">
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>eBay</span>
+                                        <span class="font-bold text-emerald-400">€840.50 (51%)</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-400 h-full w-[51%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>Vinted</span>
+                                        <span class="font-bold text-emerald-400">€510.00 (31%)</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-400 h-full w-[31%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-slate-300 mb-1">
+                                        <span>StockX</span>
+                                        <span class="font-bold text-emerald-400">€290.00 (18%)</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-400 h-full w-[18%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-dark-800 border border-slate-800 p-5 rounded-xl">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Top Category ROI</h4>
+                            <div class="space-y-3 text-xs">
+                                <div class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-800">
+                                    <span class="text-slate-300">Electronics & Gadgets</span>
+                                    <span class="font-bold text-white font-mono">68.4% ROI</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-800">
+                                    <span class="text-slate-300">Apparel & Vintage</span>
+                                    <span class="font-bold text-white font-mono">54.1% ROI</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-slate-900 rounded border border-slate-800">
+                                    <span class="text-slate-300">Collectibles & Toys</span>
+                                    <span class="font-bold text-white font-mono">41.8% ROI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works" class="py-20 bg-dark-900 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Simple 4-Step Process</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    FROM FINDING A DEAL TO UNDERSTANDING YOUR PROFIT.
+                </h2>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    A streamlined workflow built into a single intuitive web application.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="bg-dark-800/60 border border-slate-800 p-6 rounded-xl relative">
+                    <span class="text-3xl font-extrabold text-slate-700">01</span>
+                    <h3 class="mt-4 text-lg font-bold text-white">1. ANALYZE</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Enter purchase price, expected sale price, target platform, and expected costs into the Flip Analyzer.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-dark-800/60 border border-slate-800 p-6 rounded-xl relative">
+                    <span class="text-3xl font-extrabold text-slate-700">02</span>
+                    <h3 class="mt-4 text-lg font-bold text-white">2. DECIDE</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Instantly see calculated profit, ROI %, margin %, break-even price and an automated BUY / MAYBE / PASS verdict.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-dark-800/60 border border-slate-800 p-6 rounded-xl relative">
+                    <span class="text-3xl font-extrabold text-slate-700">03</span>
+                    <h3 class="mt-4 text-lg font-bold text-white">3. TRACK</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Move purchased items directly into your active inventory ledger with a single click.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-dark-800/60 border border-slate-800 p-6 rounded-xl relative">
+                    <span class="text-3xl font-extrabold text-slate-700">04</span>
+                    <h3 class="mt-4 text-lg font-bold text-white">4. SELL & LEARN</h3>
+                    <p class="mt-2 text-sm text-slate-400 leading-relaxed">
+                        Record the final real sale and analyze your actual overall business performance and margins.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET SECTION -->
+    <section class="py-20 bg-dark-800/30 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Complete Suite</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    EVERYTHING YOU NEED TO MANAGE YOUR RESELLING NUMBERS.
+                </h2>
+                <p class="mt-4 text-slate-400 text-base">
+                    No hidden add-ons. You get access to the full application suite.
+                </p>
+            </div>
+
+            <div class="mt-12 max-w-4xl mx-auto bg-dark-900 border border-slate-800 rounded-2xl p-8 sm:p-10 shadow-xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                    
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Flip Analyzer Module</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Sourcing Opportunity Manager</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Active Inventory Tracking</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Completed Sales Ledger</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Real-Time Profit Dashboard</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Platform & Category Analytics</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Searchable Multi-Currency System</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Dark & Light Display Modes</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">Private Local Browser Storage</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-200">JSON Data Export & Import</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="py-20 bg-dark-900 border-b border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Transparent Pricing</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    ONE-TIME PURCHASE. NO SUBSCRIPTION.
+                </h2>
+                <p class="mt-4 text-slate-400 text-base sm:text-lg">
+                    Pay once and own the application. No recurring monthly software costs.
+                </p>
+            </div>
+
+            <!-- Pricing Card -->
+            <div class="mt-12 max-w-lg mx-auto bg-dark-800 border-2 border-emerald-500/50 rounded-2xl p-8 sm:p-10 shadow-2xl relative">
+                
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-400 text-slate-900 px-4 py-1 rounded-full text-xs font-extrabold tracking-wider uppercase shadow-md">
+                    ONE-TIME PURCHASE
+                </div>
+
+                <div class="text-center pt-2">
+                    <h3 class="text-2xl font-extrabold text-white">FLIPWISE</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Resale Profit System</p>
+                    
+                    <div class="mt-6 flex items-baseline justify-center space-x-1">
+                        <span class="text-5xl font-extrabold text-white tracking-tight">€9.99</span>
+                        <span class="text-slate-400 text-sm font-medium">EUR</span>
+                    </div>
+                    <span class="text-xs text-emerald-400 font-semibold mt-2 block">No recurring monthly subscription</span>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-700/80 space-y-3.5 text-sm text-slate-300">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Full FLIPWISE web application</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Flip Analyzer & Sourcing Module</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Inventory & Sales Ledger</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Dashboard & Advanced Analytics</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Searchable currency selection</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Dark and Light Mode toggle</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Private local browser storage</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Full JSON Export and Import capabilities</span>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button onclick="openModal()" type="button" class="w-full py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center block">
+                        GET FLIPWISE — €9.99
+                    </button>
+                </div>
+
+                <div class="mt-4 text-center text-xs text-slate-400">
+                    Instant access after checkout • Secure payment processing
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 bg-dark-800/40 border-b border-slate-800/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Questions & Answers</span>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    FREQUENTLY ASKED QUESTIONS
+                </h2>
+                <p class="mt-4 text-slate-400 text-base">
+                    Clear answers regarding FLIPWISE functionality, security, and usage.
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Does FLIPWISE require Excel?</span>
+                        <svg id="faq-icon-1" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-1" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        No. FLIPWISE is a standalone browser-based web application. It runs directly in your web browser without requiring Microsoft Excel, Google Sheets, or any third-party spreadsheet software.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Does FLIPWISE require an account?</span>
+                        <svg id="faq-icon-2" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-2" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        No. Your business data is stored locally in your web browser's storage engine. You do not need to create an online account or sync your data to remote servers. You retain complete ownership and control of your financial records.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(3)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Can I use different currencies?</span>
+                        <svg id="faq-icon-3" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-3" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        Yes. FLIPWISE includes a large searchable list of international currencies (EUR, USD, GBP, CAD, AUD, JPY, and more). You can configure your primary display currency anytime in settings.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(4)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Can I change platform fees?</span>
+                        <svg id="faq-icon-4" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-4" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        Yes. Platform fee settings are fully configurable. FLIPWISE comes with pre-set standard fee rates for platforms like eBay, StockX, Poshmark, and Vinted, but you can customize percentages or add your own custom sales channels.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(5)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Is FLIPWISE an accounting or tax tool?</span>
+                        <svg id="faq-icon-5" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-5" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        No. FLIPWISE is a profit analysis and inventory management tool based on user-entered information. It does not replace professional accounting or official tax advice.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="py-20 bg-dark-900 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-gradient-to-b from-dark-800 to-slate-900 border border-slate-800 rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        KNOW YOUR NUMBERS BEFORE YOU BUY.
+                    </h2>
+                    <p class="mt-4 text-base sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+                        Make better purchasing decisions and keep track of what actually makes you money.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button onclick="openModal()" type="button" class="w-full sm:w-auto px-9 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-500/20">
+                            GET FLIPWISE — €9.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Brand Info -->
+                <div class="text-center md:text-left space-y-1">
+                    <div class="flex items-center justify-center md:justify-start space-x-2">
+                        <span class="font-extrabold text-lg tracking-wider text-white">FLIPWISE</span>
+                        <span class="text-xs text-emerald-400 font-mono">RESALE PROFIT SYSTEM</span>
+                    </div>
+                    <p class="text-xs text-slate-400">KNOW YOUR PROFIT BEFORE YOU BUY.</p>
+                </div>
+
+                <!-- Footer Nav Links -->
+                <div class="flex flex-wrap justify-center space-x-6 text-xs font-semibold text-slate-300">
+                    <a href="#features" class="hover:text-emerald-400 transition-colors">Features</a>
+                    <a href="#how-it-works" class="hover:text-emerald-400 transition-colors">How It Works</a>
+                    <a href="#pricing" class="hover:text-emerald-400 transition-colors">Pricing</a>
+                    <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 space-y-2 sm:space-y-0">
+                <p>&copy; 2026 FLIPWISE. All rights reserved. Commercial Web Application.</p>
+                <p class="text-slate-400">Not financial or accounting advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHECKOUT SIMULATION MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-dark-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="text-center">
+                <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Get FLIPWISE Today</h3>
+                <p class="text-xs text-slate-400 mt-1">One-time purchase • €9.99 EUR</p>
+            </div>
+
+            <div class="mt-6 space-y-4">
+                <div class="bg-dark-800 p-4 rounded-xl border border-slate-800 text-xs space-y-2">
+                    <div class="flex justify-between text-slate-300">
+                        <span>Product:</span>
+                        <span class="font-bold text-white">FLIPWISE Application License</span>
+                    </div>
+                    <div class="flex justify-between text-slate-300">
+                        <span>Billing Type:</span>
+                        <span class="text-emerald-400 font-semibold">Single payment (Lifetime Access)</span>
+                    </div>
+                    <div class="flex justify-between text-slate-300 pt-2 border-t border-slate-700">
+                        <span>Total Due:</span>
+                        <span class="font-bold text-white text-sm">€9.99</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-xs text-slate-300 font-medium">Email Address (for instant delivery)</label>
+                    <input type="email" placeholder="you@example.com" class="w-full bg-dark-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                </div>
+
+                <button type="button" onclick="alert('Demo Mode: In production, this links directly to the Stripe / Paddle checkout window.')" class="w-full py-3.5 rounded-xl text-sm font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-md">
+                    PROCEED TO SECURE CHECKOUT — €9.99
+                </button>
+            </div>
+
+            <p class="mt-4 text-[11px] text-center text-slate-400">
+                30-Day Guarantee • Instant Web Access
+            </p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIconOpen.classList.add('hidden');
+                menuIconClose.classList.remove('hidden');
+            }
+        });
+
+        // 2. Interactive Hero Flip Analyzer Calculator Logic
+        const buyInput = document.getElementById('demo-buy');
+        const saleInput = document.getElementById('demo-sale');
+        const feeInput = document.getElementById('demo-fee');
+        const shipInput = document.getElementById('demo-ship');
+
+        const profitEl = document.getElementById('demo-profit');
+        const roiEl = document.getElementById('demo-roi');
+        const marginEl = document.getElementById('demo-margin');
+        const breakevenEl = document.getElementById('demo-breakeven');
+        const maxbuyEl = document.getElementById('demo-maxbuy');
+        const badgeEl = document.getElementById('demo-badge');
+
+        function recalculateDemo() {
+            const buy = parseFloat(buyInput.value) || 0;
+            const sale = parseFloat(saleInput.value) || 0;
+            const feePercent = parseFloat(feeInput.value) || 0;
+            const ship = parseFloat(shipInput.value) || 0;
+
+            const feeAmount = sale * (feePercent / 100);
+            const netRevenue = sale - feeAmount - ship;
+            const totalCost = buy;
+            const netProfit = netRevenue - totalCost;
+            
+            const roi = totalCost > 0 ? (netProfit / totalCost) * 100 : 0;
+            const margin = sale > 0 ? (netProfit / sale) * 100 : 0;
+
+            // Break-even selling price = Cost / (1 - feePercent/100)
+            const feeDecimal = feePercent / 100;
+            const breakeven = feeDecimal < 1 ? (totalCost + ship) / (1 - feeDecimal) : 0;
+
+            // Max buy price targeting 30% ROI: Net Revenue / 1.3
+            const maxBuy = netRevenue / 1.3;
+
+            // Update UI
+            profitEl.textContent = (netProfit >= 0 ? '€' : '-€') + Math.abs(netProfit).toFixed(2);
+            profitEl.className = netProfit >= 0 ? 'text-2xl font-extrabold text-emerald-400 mt-0.5 block' : 'text-2xl font-extrabold text-rose-400 mt-0.5 block';
+
+            roiEl.textContent = roi.toFixed(1) + '%';
+            marginEl.textContent = margin.toFixed(1) + '%';
+            breakevenEl.textContent = '€' + breakeven.toFixed(2);
+            maxbuyEl.textContent = '€' + (maxBuy > 0 ? maxBuy.toFixed(2) : '0.00');
+
+            // Verdict badge calculation
+            if (roi >= 40 && netProfit >= 15) {
+                badgeEl.textContent = 'VERDICT: BUY';
+                badgeEl.className = 'px-2.5 py-1 rounded text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40';
+            } else if (roi >= 15 && netProfit > 0) {
+                badgeEl.textContent = 'VERDICT: MAYBE';
+                badgeEl.className = 'px-2.5 py-1 rounded text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40';
+            } else {
+                badgeEl.textContent = 'VERDICT: PASS';
+                badgeEl.className = 'px-2.5 py-1 rounded text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/40';
+            }
+        }
+
+        [buyInput, saleInput, feeInput, shipInput].forEach(input => {
+            input.addEventListener('input', recalculateDemo);
+        });
+
+        // 3. Interface Preview Tab Switcher
+        function switchTab(tabName) {
+            // Hide all screen views
+            ['dashboard', 'analyzer', 'inventory', 'analytics'].forEach(t => {
+                document.getElementById(`screen-view-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-${t}`);
+                btn.className = 'tab-btn px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all';
+            });
+
+            // Show selected screen
+            document.getElementById(`screen-view-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.className = 'tab-btn active px-4 py-2 rounded-lg text-xs font-bold text-slate-900 bg-emerald-400 transition-all';
+
+            // Update Title
+            const titles = {
+                'dashboard': 'Dashboard View',
+                'analyzer': 'Flip Analyzer Module',
+                'inventory': 'Active Inventory Ledger',
+                'analytics': 'Sales & Channel Analytics'
+            };
+            document.getElementById('screen-title').textContent = titles[tabName];
+        }
+
+        // 4. FAQ Accordion Logic
+        function toggleFaq(index) {
+            const ans = document.getElementById(`faq-ans-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            const isHidden = ans.classList.contains('hidden');
+
+            if (isHidden) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // 5. Checkout Modal Logic
+        function openModal() {
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
