@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLIPWISE — Resale Profit System | Know Your Profit Before You Buy</title>
+    <meta name="description" content="FLIPWISE is a downloadable browser-based reselling tool for profit estimates, sourcing, inventory and sales tracking. One-time purchase through Etsy.">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -88,7 +89,7 @@
 
                 <!-- Desktop CTA Button -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="#pricing" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-sm shadow-emerald-500/20 active:scale-95">
+                    <a href="https://www.etsy.com/listing/4605594690/flipwise-reseller-profit-calculator" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg text-sm font-semibold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-sm shadow-emerald-500/20 active:scale-95">
                         GET FLIPWISE — €9.99
                     </a>
                 </div>
@@ -112,7 +113,7 @@
             <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Pricing</a>
             <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">FAQ</a>
             <div class="pt-2">
-                <a href="#pricing" class="block w-full text-center px-5 py-3 rounded-lg text-sm font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300">
+                <a href="https://www.etsy.com/listing/4605594690/flipwise-reseller-profit-calculator" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-5 py-3 rounded-lg text-sm font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300">
                     GET FLIPWISE — €9.99
                 </a>
             </div>
@@ -127,7 +128,7 @@
                 <!-- Badge -->
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-semibold mb-6">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>Standalone Web Application • No Monthly Fees</span>
+                    <span>Downloadable Browser-Based Tool • No Monthly Fees</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
@@ -140,7 +141,7 @@
 
                 <!-- Hero CTA Buttons -->
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center">
+                    <a href="https://www.etsy.com/listing/4605594690/flipwise-reseller-profit-calculator" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center">
                         GET FLIPWISE — €9.99
                     </a>
                     <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-300 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 transition-all text-center">
@@ -160,7 +161,7 @@
                     </span>
                     <span class="flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Instant Web Access
+                        Digital Download via Etsy
                     </span>
                 </div>
             </div>
@@ -175,10 +176,10 @@
                             <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
                             <span class="w-3 h-3 rounded-full bg-slate-700 inline-block"></span>
-                            <span class="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">flipwise.app / analyzer</span>
+                            <span class="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">FLIPWISE / ANALYZER DEMO</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">LIVE INTERACTIVE DEMO</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">INTERACTIVE DEMO</span>
                         </div>
                     </div>
 
@@ -215,13 +216,8 @@
                                 <div class="grid grid-cols-2 gap-3">
                                     <div>
                                         <label class="block text-xs font-medium text-slate-300 mb-1">Platform Fee (%)</label>
-                                        <select id="demo-fee" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-                                            <option value="12.8">eBay (12.8%)</option>
-                                            <option value="15">Amazon (15.0%)</option>
-                                            <option value="10">StockX / GOAT (10%)</option>
-                                            <option value="0">Vinted / Local (0%)</option>
-                                            <option value="20">Poshmark (20.0%)</option>
-                                        </select>
+                                        <input id="demo-fee" type="number" min="0" max="100" step="0.1" value="9" aria-label="Example platform fee percentage" class="w-full bg-dark-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+                                        <p class="mt-1 text-[10px] text-slate-500">Illustrative rate. Enter the fee you want to test.</p>
                                     </div>
                                     <div>
                                         <label class="block text-xs font-medium text-slate-300 mb-1">Est. Shipping (€)</label>
@@ -244,33 +240,33 @@
                                 <div class="mt-4 grid grid-cols-2 gap-4">
                                     <div class="p-3 bg-slate-800/40 rounded-lg border border-slate-800">
                                         <span class="block text-xs text-slate-400 font-medium">Net Estimated Profit</span>
-                                        <span id="demo-profit" class="text-2xl font-extrabold text-emerald-400 mt-0.5 block">€60.10</span>
+                                        <span id="demo-profit" class="text-2xl font-extrabold text-emerald-400 mt-0.5 block">€66.75</span>
                                     </div>
                                     <div class="p-3 bg-slate-800/40 rounded-lg border border-slate-800">
                                         <span class="block text-xs text-slate-400 font-medium">Estimated ROI</span>
-                                        <span id="demo-roi" class="text-2xl font-extrabold text-white mt-0.5 block">70.7%</span>
+                                        <span id="demo-roi" class="text-2xl font-extrabold text-white mt-0.5 block">78.5%</span>
                                     </div>
                                 </div>
 
                                 <div class="mt-4 space-y-2 text-xs">
                                     <div class="flex justify-between text-slate-400">
                                         <span>Profit Margin:</span>
-                                        <span id="demo-margin" class="text-slate-200 font-semibold">34.3%</span>
+                                        <span id="demo-margin" class="text-slate-200 font-semibold">38.1%</span>
                                     </div>
                                     <div class="flex justify-between text-slate-400">
                                         <span>Break-Even Selling Price:</span>
-                                        <span id="demo-breakeven" class="text-slate-200 font-semibold">€106.08</span>
+                                        <span id="demo-breakeven" class="text-slate-200 font-semibold">€101.65</span>
                                     </div>
                                     <div class="flex justify-between text-slate-400">
                                         <span>Max Buy Price (at 30% Target ROI):</span>
-                                        <span id="demo-maxbuy" class="text-slate-200 font-semibold">€117.38</span>
+                                        <span id="demo-maxbuy" class="text-slate-200 font-semibold">€116.73</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-                                <span>Calculated automatically by FLIPWISE engine</span>
-                                <span class="text-emerald-400 font-mono">0.02ms</span>
+                                <span>Updates as you adjust the example values</span>
+                                <span class="text-emerald-400 font-mono">Demo calculation</span>
                             </div>
                         </div>
 
@@ -339,8 +335,8 @@
                     <h4 class="text-lg font-bold text-white">A seemingly profitable item can become far less profitable after real costs are included.</h4>
                 </div>
                 <div class="shrink-0 bg-dark-800 px-5 py-3 rounded-lg border border-slate-700 text-center">
-                    <span class="text-xs text-slate-400 block">Typical Fee Drag</span>
-                    <span class="text-xl font-extrabold text-white">15% – 35%</span>
+                    <span class="text-xs text-slate-400 block">COST CHECK</span>
+                    <span class="text-sm font-bold text-white">Count every expense</span>
                 </div>
             </div>
         </div>
@@ -466,7 +462,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white">4. SALES LEDGER</h3>
                     <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-                        Keep a clear, permanent record of completed sales, true net profit, and days to sell.
+                        Keep an organized record of completed sales, estimated net profit, and days to sell.
                     </p>
                 </div>
 
@@ -488,7 +484,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white">6. ANALYTICS</h3>
                     <p class="mt-2 text-sm text-slate-400 leading-relaxed">
-                        Understand net profitability broken down by selling platform, item category, and custom time period.
+                        Review available summaries of sales performance, profitability by selling platform and item category, and inventory age.
                     </p>
                 </div>
 
@@ -539,7 +535,7 @@
                     </div>
                     <div class="flex items-center space-x-3 text-[11px]">
                         <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">DEMO DATA</span>
-                        <span class="hidden sm:inline text-slate-400">Local DB: Connected</span>
+                        <span class="hidden sm:inline text-slate-400">Browser storage: Local</span>
                     </div>
                 </div>
 
@@ -572,7 +568,7 @@
                     <div class="bg-dark-800 border border-slate-800 rounded-xl overflow-x-auto">
                         <div class="p-4 border-b border-slate-800 flex justify-between items-center">
                             <h4 class="text-xs font-bold text-white uppercase tracking-wider">Recent Completed Sales</h4>
-                            <span class="text-xs text-emerald-400 font-mono">Last updated today</span>
+                            <span class="text-xs text-emerald-400 font-mono">Illustrative demo records</span>
                         </div>
                         <table class="w-full text-left text-xs text-slate-300">
                             <thead class="bg-slate-900/80 text-slate-400 border-b border-slate-800 uppercase text-[10px]">
@@ -604,7 +600,7 @@
                                 </tr>
                                 <tr>
                                     <td class="p-3 font-semibold text-white">Retro Gaming Console</td>
-                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">StockX</span></td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">Depop</span></td>
                                     <td class="p-3 font-mono">€110.00</td>
                                     <td class="p-3 font-mono">€190.00</td>
                                     <td class="p-3 font-mono text-emerald-400 font-bold">+€51.00</td>
@@ -719,7 +715,7 @@
                                 </div>
                                 <div>
                                     <div class="flex justify-between text-slate-300 mb-1">
-                                        <span>StockX</span>
+                                        <span>Depop</span>
                                         <span class="font-bold text-emerald-400">€290.00 (18%)</span>
                                     </div>
                                     <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
@@ -817,7 +813,7 @@
                     EVERYTHING YOU NEED TO MANAGE YOUR RESELLING NUMBERS.
                 </h2>
                 <p class="mt-4 text-slate-400 text-base">
-                    No hidden add-ons. You get access to the full application suite.
+                    No hidden add-ons. Your download includes the FLIPWISE application and its setup materials.
                 </p>
             </div>
 
@@ -856,7 +852,7 @@
                         <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <span class="text-sm font-semibold text-slate-200">Real-Time Profit Dashboard</span>
+                        <span class="text-sm font-semibold text-slate-200">Dashboard Overview</span>
                     </div>
 
                     <div class="flex items-center space-x-3">
@@ -884,14 +880,14 @@
                         <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <span class="text-sm font-semibold text-slate-200">Private Local Browser Storage</span>
+                        <span class="text-sm font-semibold text-slate-200">Local Browser Data Storage</span>
                     </div>
 
                     <div class="flex items-center space-x-3">
                         <div class="w-6 h-6 rounded-full bg-emerald-500/10 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <span class="text-sm font-semibold text-slate-200">JSON Data Export & Import</span>
+                        <span class="text-sm font-semibold text-slate-200">JSON Data Export for Backups</span>
                     </div>
 
                 </div>
@@ -908,7 +904,7 @@
                     ONE-TIME PURCHASE. NO SUBSCRIPTION.
                 </h2>
                 <p class="mt-4 text-slate-400 text-base sm:text-lg">
-                    Pay once and own the application. No recurring monthly software costs.
+                    One-time purchase of the downloadable application. No recurring monthly software costs.
                 </p>
             </div>
 
@@ -928,12 +924,13 @@
                         <span class="text-slate-400 text-sm font-medium">EUR</span>
                     </div>
                     <span class="text-xs text-emerald-400 font-semibold mt-2 block">No recurring monthly subscription</span>
+                    <p class="text-[11px] text-slate-400 mt-3 leading-relaxed">€9.99 base price. Applicable taxes may vary by location and are calculated by Etsy at checkout.</p>
                 </div>
 
                 <div class="mt-8 pt-6 border-t border-slate-700/80 space-y-3.5 text-sm text-slate-300">
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Full FLIPWISE web application</span>
+                        <span>Downloadable FLIPWISE HTML application</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -961,18 +958,19 @@
                     </div>
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <span>Full JSON Export and Import capabilities</span>
+                        <span>JSON Data Export for Backups</span>
                     </div>
                 </div>
 
                 <div class="mt-8">
-                    <button onclick="openModal()" type="button" class="w-full py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center block">
+                    <a href="https://www.etsy.com/listing/4605594690/flipwise-reseller-profit-calculator" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-500/20 text-center block">
                         GET FLIPWISE — €9.99
-                    </button>
+                    </a>
                 </div>
 
-                <div class="mt-4 text-center text-xs text-slate-400">
-                    Instant access after checkout • Secure payment processing
+                <div class="mt-4 text-center text-xs text-slate-400 leading-relaxed">
+                    Includes the downloadable HTML application, README setup instructions and Quick Start Guide PDF.<br>
+                    Digital files are provided through Etsy after successful payment.
                 </div>
 
             </div>
@@ -1001,7 +999,7 @@
                         <svg id="faq-icon-1" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="faq-ans-1" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
-                        No. FLIPWISE is a standalone browser-based web application. It runs directly in your web browser without requiring Microsoft Excel, Google Sheets, or any third-party spreadsheet software.
+                        No. FLIPWISE is a downloadable HTML application that runs in a modern web browser. It does not require Microsoft Excel, Google Sheets, or third-party spreadsheet software.
                     </div>
                 </div>
 
@@ -1012,7 +1010,7 @@
                         <svg id="faq-icon-2" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="faq-ans-2" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
-                        No. Your business data is stored locally in your web browser's storage engine. You do not need to create an online account or sync your data to remote servers. You retain complete ownership and control of your financial records.
+                        No FLIPWISE account is required. Your business records are stored locally in the browser you use; there is no cloud synchronization. Export regular JSON backups to protect your records.
                     </div>
                 </div>
 
@@ -1034,7 +1032,7 @@
                         <svg id="faq-icon-4" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="faq-ans-4" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
-                        Yes. Platform fee settings are fully configurable. FLIPWISE comes with pre-set standard fee rates for platforms like eBay, StockX, Poshmark, and Vinted, but you can customize percentages or add your own custom sales channels.
+                        Yes. Platform fee settings are fully configurable. FLIPWISE includes editable fee presets for Vinted, eBay, Depop and Etsy. You can also adjust percentages or add your own custom sales channels. Preset rates are estimates, not live fee quotations, so verify the current fees charged by each platform.
                     </div>
                 </div>
 
@@ -1046,6 +1044,28 @@
                     </button>
                     <div id="faq-ans-5" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
                         No. FLIPWISE is a profit analysis and inventory management tool based on user-entered information. It does not replace professional accounting or official tax advice.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(6)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">Do I need an internet connection?</span>
+                        <svg id="faq-icon-6" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-6" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        Some components load from external web libraries, so an internet connection may be required when using FLIPWISE.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-dark-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(7)" type="button" class="w-full p-6 text-left flex justify-between items-center focus:outline-none">
+                        <span class="text-base font-bold text-white">How do I receive FLIPWISE?</span>
+                        <svg id="faq-icon-7" class="w-5 h-5 text-emerald-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="faq-ans-7" class="hidden px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-slate-800/60 pt-4">
+                        FLIPWISE is a digital download. After successful payment, download the ZIP package from your Etsy order, extract it on your computer and open flipwise.html in a modern desktop browser. The ZIP includes the application, README setup instructions and Quick Start Guide PDF.
                     </div>
                 </div>
 
@@ -1065,9 +1085,9 @@
                         Make better purchasing decisions and keep track of what actually makes you money.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button onclick="openModal()" type="button" class="w-full sm:w-auto px-9 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-500/20">
+                        <a href="https://www.etsy.com/listing/4605594690/flipwise-reseller-profit-calculator" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-9 py-4 rounded-xl text-base font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-500/20 text-center">
                             GET FLIPWISE — €9.99
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1098,58 +1118,11 @@
             </div>
 
             <div class="mt-8 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 space-y-2 sm:space-y-0">
-                <p>&copy; 2026 FLIPWISE. All rights reserved. Commercial Web Application.</p>
+                <p>&copy; 2026 FLIPWISE. All rights reserved. Downloadable Browser-Based Application.</p>
                 <p class="text-slate-400">Not financial or accounting advice.</p>
             </div>
         </div>
     </footer>
-
-    <!-- CHECKOUT SIMULATION MODAL -->
-    <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-        <div class="bg-dark-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl">
-            <button onclick="closeModal()" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-
-            <div class="text-center">
-                <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white">Get FLIPWISE Today</h3>
-                <p class="text-xs text-slate-400 mt-1">One-time purchase • €9.99 EUR</p>
-            </div>
-
-            <div class="mt-6 space-y-4">
-                <div class="bg-dark-800 p-4 rounded-xl border border-slate-800 text-xs space-y-2">
-                    <div class="flex justify-between text-slate-300">
-                        <span>Product:</span>
-                        <span class="font-bold text-white">FLIPWISE Application License</span>
-                    </div>
-                    <div class="flex justify-between text-slate-300">
-                        <span>Billing Type:</span>
-                        <span class="text-emerald-400 font-semibold">Single payment (Lifetime Access)</span>
-                    </div>
-                    <div class="flex justify-between text-slate-300 pt-2 border-t border-slate-700">
-                        <span>Total Due:</span>
-                        <span class="font-bold text-white text-sm">€9.99</span>
-                    </div>
-                </div>
-
-                <div class="space-y-2">
-                    <label class="block text-xs text-slate-300 font-medium">Email Address (for instant delivery)</label>
-                    <input type="email" placeholder="you@example.com" class="w-full bg-dark-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
-                </div>
-
-                <button type="button" onclick="alert('Demo Mode: In production, this links directly to the Stripe / Paddle checkout window.')" class="w-full py-3.5 rounded-xl text-sm font-bold text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-md">
-                    PROCEED TO SECURE CHECKOUT — €9.99
-                </button>
-            </div>
-
-            <p class="mt-4 text-[11px] text-center text-slate-400">
-                30-Day Guarantee • Instant Web Access
-            </p>
-        </div>
-    </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
@@ -1231,6 +1204,7 @@
         [buyInput, saleInput, feeInput, shipInput].forEach(input => {
             input.addEventListener('input', recalculateDemo);
         });
+        recalculateDemo();
 
         // 3. Interface Preview Tab Switcher
         function switchTab(tabName) {
@@ -1271,14 +1245,6 @@
             }
         }
 
-        // 5. Checkout Modal Logic
-        function openModal() {
-            document.getElementById('checkout-modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('checkout-modal').classList.add('hidden');
-        }
     </script>
 </body>
 </html>
